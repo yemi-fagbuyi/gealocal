@@ -1,7 +1,11 @@
 pipeline {
+    
     agent any
+    triggers {
+  pollSCM '* * * * *'
+}
     stages {
-        stage('Build') {
+        stage('code') {
             steps {
                 echo 'Build Step'
                 sleep 10
