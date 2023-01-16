@@ -1,4 +1,7 @@
 pipeline {
+    triggers {
+        pollSCM('* * * * *')
+    }
     agent any
     tools{
         maven 'M2_HOME'
@@ -19,7 +22,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploy Step'
-                sleep 10
+                
             }
         }
         stage('Docker') {
