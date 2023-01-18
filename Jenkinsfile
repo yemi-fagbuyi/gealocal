@@ -19,7 +19,7 @@ pipeline {
         }
         stage('create zipfile') {
             steps {
-               sh'zip geaolocal${BUILD_NUMBER}.zip *  --exclude Jenkinsfile README.md'
+               sh 'zip geaolocal${BUILD_NUMBER}.zip *  --exclude Jenkinsfile README.md'
                       
             }
         }
