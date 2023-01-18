@@ -19,10 +19,11 @@ pipeline {
                 sh 'mvn test'
             }
         }
-        stage('Deploy') {
+        stage('create zipfile') {
             steps {
-                echo 'Deploy Step'
-                
+                script{ 
+                    zip geaolocal${BUILD_NUMBER}.zip *  --exclude Jenkinsfile README.md
+                      }
             }
         }
         stage('Docker') {
