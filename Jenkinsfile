@@ -21,9 +21,8 @@ pipeline {
         }
         stage('create zipfile') {
             steps {
-                script{ 
-                    zip geaolocal${BUILD_NUMBER}.zip *  --exclude Jenkinsfile README.md
-                      }
+               sh'zip geaolocal${BUILD_NUMBER}.zip *  --exclude Jenkinsfile README.md'
+                      
             }
         }
         stage('Docker') {
