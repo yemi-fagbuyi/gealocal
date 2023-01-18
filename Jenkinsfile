@@ -12,7 +12,7 @@ pipeline {
                 sh 'mvn package'
             }
         }
-        stage('Test') {
+        stage('Test-webhook') {
             steps {
                 sh 'mvn test'
             }
